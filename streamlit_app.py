@@ -60,3 +60,4 @@ input_df = pd.DataFrame(user_input)
 
 st.write(input_df)
 st.write(input_df.select_dtypes("object"))
+
