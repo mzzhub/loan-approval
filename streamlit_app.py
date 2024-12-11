@@ -68,20 +68,15 @@ input_df["person_education"] = input_df["person_education"].replace({"Bachelor" 
 input_df["person_home_ownership"] = input_df["person_home_ownership"].replace({"Rent" : 0, "Mortgage" : 1, "Own" : 2, "Other" : 3})
 input_df["loan_intent"] = input_df["loan_intent"].replace({"Education" :0, "Medical" : 1, "Venture" : 2, "Personal" : 3, "Debt Consolidation" : 4, "Home Improvement" : 5})
 
-st.write("Two")
-st.write(input_df)
-st.write(input_df.select_dtypes("object"))
-
-# ss02 = StandardScaler()
-# input_df = ss02.fit_transform(input_df)
-
-# st.write("Three")
-# st.write(input_df)
-# st.write(input_df.select_dtypes("object"))
-
 row_array = input_df.iloc[0].to_numpy().reshape(1, -1)
-st.write(row_array)
 
 pred = knn.predict(row_array)
 
-st.write(pred)
+k = "lalal"
+
+if pred == 1:
+    k = "ok"
+else:
+    k = "no"
+
+st.write(k)
