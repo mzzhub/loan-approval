@@ -34,3 +34,4 @@ knn.fit(x, y)
 # user inputs
 age = int(st.slider("Age", 20, 114, 30))
 gender = str(st.radio("Gender", ("Male", "Female")))
+education = str(st.selectbox("Education", ("Bachelor", "Associate", "High School", "Master", "Doctorate")))
