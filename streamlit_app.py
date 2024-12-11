@@ -59,10 +59,6 @@ user_input = {
 
 input_df = pd.DataFrame(user_input)
 
-st.write("one")
-st.write(input_df)
-st.write(input_df.select_dtypes("object"))
-
 input_df["person_gender"] = input_df["person_gender"].replace({"Male" : 0, "Female" : 1})
 input_df["person_education"] = input_df["person_education"].replace({"Bachelor" : 0, "Associate" : 1, "High School" : 2, "Master" : 3, "Doctorate" : 4})
 input_df["person_home_ownership"] = input_df["person_home_ownership"].replace({"Rent" : 0, "Mortgage" : 1, "Own" : 2, "Other" : 3})
