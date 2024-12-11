@@ -81,3 +81,7 @@ st.write(input_df.select_dtypes("object"))
 
 row_array = input_df.iloc[0].to_numpy()
 st.write(row_array)
+
+pred = knn.predict(row_array)
+
+st.write(pred)
