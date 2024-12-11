@@ -40,6 +40,6 @@ emp_exp = int(st.number_input("Employment Experience in Years", 0, 125, 5))
 home = str(st.radio("House Ownership", ("Rent", "Mortgage", "Own", "Other")))
 amount = int(st.number_input("Requried Loan Amount", 500, 35000, 10000, 500))
 purpose = str(st.selectbox("Purpose", ("Education", "Medical", "Venture", "Personal", "Debt Consolidation", "Home Improvement")))
-
-
+rate = float(st.number_input("Intrest Rate", 5.50, 20.00, 6.00, 0.01))
+score = int(st.number_input("Current Credit Score", 390, 850, 400))
 
