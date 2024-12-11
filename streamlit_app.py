@@ -62,8 +62,8 @@ st.write("one")
 st.write(input_df)
 st.write(input_df.select_dtypes("object"))
 
-for col in test_df.select_dtypes(include='object').columns:
-    test_df[col] = le.transform(df[col])
+# for col in test_df.select_dtypes(include='object').columns:
+#     test_df[col] = le.transform(df[col])
 
 st.write("Two")
 st.write(input_df)
