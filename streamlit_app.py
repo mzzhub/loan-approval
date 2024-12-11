@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.title('🎈 App Name')
+st.title('Loan Approval Check')
 
-st.write('Hello world!')
+st.write('Fill the details')
