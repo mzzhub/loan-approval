@@ -36,5 +36,5 @@ age = int(st.slider("Age", 20, 114, 30))
 gender = str(st.radio("Gender", ("Male", "Female")))
 education = str(st.selectbox("Education", ("Bachelor", "Associate", "High School", "Master", "Doctorate")))
 income = int(st.number_input("Annual Income", 8000, 7200000, 50000))
-
+emp_exp = int(st.number_input("Employment Experience in Years", 0, 125, 5))
 
