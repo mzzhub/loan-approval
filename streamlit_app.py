@@ -39,7 +39,7 @@ income = int(st.number_input("Annual Income", 8000, 7200000, 50000, 500))
 emp_exp = int(st.number_input("Employment Experience in Years", 0, 125, 5))
 home = str(st.radio("House Ownership", ("Rent", "Mortgage", "Own", "Other")))
 amount = int(st.number_input("Requried Loan Amount", 500, 35000, 10000, 500))
-
+purpose = str(st.selectbox("Purpose", ("Education", "Medical", "Venture", "Personal", "Debt Consolidation", "Home Improvement")))
 
 
 
