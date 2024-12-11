@@ -43,3 +43,19 @@ purpose = str(st.selectbox("Purpose", ("Education", "Medical", "Venture", "Perso
 rate = float(st.number_input("Intrest Rate", 5.50, 20.00, 6.00, 0.01))
 score = int(st.number_input("Current Credit Score", 390, 850, 400))
 
+user_input = {
+    'person_age': [age],
+    'person_gender': [gender],
+    'person_education': [education],
+    'person_income': [income],
+    'person_emp_exp': [emp_exp],
+    'person_home_ownership': [home],
+    'loan_amnt': [amount],
+    'loan_intent': [purpose],
+    'loan_int_rate': [rate],
+    'credit_score': [score]
+}
+
+input_df = pd.DataFrame(user_input)
+
+st.write(input_df)
