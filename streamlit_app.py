@@ -79,4 +79,5 @@ st.write(input_df.select_dtypes("object"))
 # st.write(input_df)
 # st.write(input_df.select_dtypes("object"))
 
-st.write(input_df[:,0:1])
+row_array = input_df.iloc[0].to_numpy()
+st,write(row_array)
