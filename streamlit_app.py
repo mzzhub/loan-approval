@@ -15,10 +15,11 @@ df["loan_intent"] = df["loan_intent"].replace({"DEBTCONSOLIDATION" : "Debt conso
 for col in object_columns:
     df[col] = df[col].apply(lambda x : x.title())
 
-from sklearn.preprocessing import LabelEncoder
-le = LabelEncoder()
-for col in df.select_dtypes(include='object').columns:
-    df[col] = le.fit_transform(df[col])
+# replace object columns
+df["person_gender"] = df["person_gender"].replace({"Male" : 0, "Female" : 1})
+df["person_education"] = df["person_education"].replace({"Bachelor" : 0, "Associate" : 1, "High School" : 2, "Master" : 3, "Doctorate" : 4})
+df["person_home_ownership"] = df["person_home_ownership"].replace({"Rent" : 0, "Mortgage" : 1, "Own" : 2, "Other" : 3})
+df["loan_intent"] = df["loan_intent"].replace({"Education" :0, "Medical" : 1, "Venture" : 2, "Personal" : 3, "Debt Consolidation" : 4, "Home Improvement" : 5})
 
 x = df.drop("loan_status", axis = 1)
 y = df["loan_status"]
@@ -62,8 +63,10 @@ st.write("one")
 st.write(input_df)
 st.write(input_df.select_dtypes("object"))
 
-# for col in test_df.select_dtypes(include='object').columns:
-#     test_df[col] = le.transform(df[col])
+input_df["person_gender"] = input_df["person_gender"].replace({"Male" : 0, "Female" : 1})
+input_df["person_education"] = input_df["person_education"].replace({"Bachelor" : 0, "Associate" : 1, "High School" : 2, "Master" : 3, "Doctorate" : 4})
+input_df["person_home_ownership"] = input_df["person_home_ownership"].replace({"Rent" : 0, "Mortgage" : 1, "Own" : 2, "Other" : 3})
+input_df["loan_intent"] = input_df["loan_intent"].replace({"Education" :0, "Medical" : 1, "Venture" : 2, "Personal" : 3, "Debt Consolidation" : 4, "Home Improvement" : 5})
 
 st.write("Two")
 st.write(input_df)
