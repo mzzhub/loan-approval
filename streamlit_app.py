@@ -25,8 +25,8 @@ x = df.drop("loan_status", axis = 1)
 y = df["loan_status"]
 
 from sklearn.preprocessing import StandardScaler
-ss = StandardScaler()
-x = ss.fit_transform(x)
+ss01 = StandardScaler()
+x = ss01.fit_transform(x)
 
 from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(metric = 'manhattan', n_neighbors = 11, weights = 'distance')
@@ -69,5 +69,12 @@ input_df["person_home_ownership"] = input_df["person_home_ownership"].replace({"
 input_df["loan_intent"] = input_df["loan_intent"].replace({"Education" :0, "Medical" : 1, "Venture" : 2, "Personal" : 3, "Debt Consolidation" : 4, "Home Improvement" : 5})
 
 st.write("Two")
+st.write(input_df)
+st.write(input_df.select_dtypes("object"))
+
+ss02 = StandardScaler()
+input_df = ss02.fit_transform(input_df)
+
+st.write("Three")
 st.write(input_df)
 st.write(input_df.select_dtypes("object"))
