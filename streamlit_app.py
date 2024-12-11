@@ -78,3 +78,5 @@ st.write(input_df.select_dtypes("object"))
 # st.write("Three")
 # st.write(input_df)
 # st.write(input_df.select_dtypes("object"))
+
+st.write(input_df[:,0:1])
