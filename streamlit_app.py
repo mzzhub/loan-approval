@@ -35,9 +35,11 @@ knn.fit(x, y)
 age = int(st.slider("Age", 20, 114, 30))
 gender = str(st.radio("Gender", ("Male", "Female")))
 education = str(st.selectbox("Education", ("Bachelor", "Associate", "High School", "Master", "Doctorate")))
-income = int(st.number_input("Annual Income", 8000, 7200000, 50000))
+income = int(st.number_input("Annual Income", 8000, 7200000, 50000, 500))
 emp_exp = int(st.number_input("Employment Experience in Years", 0, 125, 5))
 home = str(st.radio("House Ownership", ("Rent", "Mortgage", "Own", "Other")))
+amount = int(st.number_input("Requried Loan Amount", 500, 35000, 10000, 500))
 
-st.write(home)
-st.write(type(home))
+
+
+
