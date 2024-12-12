@@ -80,7 +80,7 @@ st.dataframe(prob_df, column_config = {
                                                                                         format = "%.1f%%",
                                                                                         width = "medium",
                                                                                         min_value = 0,
-                                                                                        max_value = 1
+                                                                                        max_value = 100
                                                                                     
                                                                                     ),
                                         "Ineligible" : st.column_config.ProgressColumn(
@@ -88,7 +88,7 @@ st.dataframe(prob_df, column_config = {
                                                                                         format = "%.1f%%",
                                                                                         width = "medium",
                                                                                         min_value = 0,
-                                                                                        max_value = 1
+                                                                                        max_value = 100
                                                                                     )
                                     }, hide_index = True)
 
