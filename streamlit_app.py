@@ -71,18 +71,8 @@ pred = knn.predict(row_array)
 prob = knn.predict_proba(row_array)
 prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
 
-k = "lalal"
-
-if pred == 1:
-    k = "ok"
-elif pred == 0:
-    k = "no"
-
-st.write(k)
-st.write(prob_df)
-
-import numpy as np
-
 st.subheader("Prediction")
+st.write(prob_df)
+import numpy as np
 possible_output = np.array(["Eligible", "Ineligible"])
 st.success(possible_output[pred][0])
