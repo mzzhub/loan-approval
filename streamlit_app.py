@@ -73,7 +73,7 @@ prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
 
 st.subheader("Prediction")
 
-st.dataftame(prob_df, column_config = {
+st.dataframe(prob_df, column_config = {
                                         "Eligible" : st.column_config.ProgressColumn(
                                                                                         "Eligible",
                                                                                         format = "%f",
