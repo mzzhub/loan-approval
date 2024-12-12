@@ -69,7 +69,7 @@ row_array = input_df.iloc[0].to_numpy().reshape(1, -1)
 pred = knn.predict(row_array)
 
 prob = knn.predict_proba(row_array)
-prob_df = pd.DataFrame(prob, columns = {0 : "Not Approved", 1 : "Approved"}})
+prob_df = pd.DataFrame(prob, columns = {0 : "Not Approved", 1 : "Approved"})
 # prob.columns = ["not approved", "aproved"]
 
 k = "lalal"
