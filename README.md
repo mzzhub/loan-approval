@@ -2,8 +2,8 @@
 ```
 ⬆️ 💵 Loan Eligibility Check 🏦
 ```
-Branch from master,
-Model using SVM
+The Main Branch, 
+Model using KNN
 
 ## Demo App
 
