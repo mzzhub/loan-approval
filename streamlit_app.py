@@ -8,7 +8,7 @@ st.markdown(
         font-size: 30px; /* Adjust the size as needed */
     }
     .stSlider label, .stRadio label, .stSelectbox label, .stNumberInput label {
-        font-size: 20px !important;
+        font-size: 40px !important;
     }
     </style>
     """,
