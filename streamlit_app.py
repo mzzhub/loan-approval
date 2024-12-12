@@ -1,20 +1,5 @@
 import streamlit as st
 
-# Inject CSS
-st.markdown(
-    """
-    <style>
-    body {
-        font-size: 30px; /* Adjust the size as needed */
-    }
-    .stSlider label, .stRadio label, .stSelectbox label, .stNumberInput label {
-        font-size: 40px !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 st.title('💵 Loan Eligibility Check 🏦')
 
 st.write('Fill the details...')
