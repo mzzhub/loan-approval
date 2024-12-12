@@ -69,8 +69,7 @@ row_array = input_df.iloc[0].to_numpy().reshape(1, -1)
 pred = knn.predict(row_array)
 
 prob = knn.predict_proba(row_array)
-prob_df = pd.DataFrame(prob, columns = ["not approved", "aproved"])
-# prob.columns = ["not approved", "aproved"]
+prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
 
 k = "lalal"
 
@@ -81,3 +80,7 @@ else:
 
 st.write(k)
 st.write(prob_df)
+
+st.subheader("Prediction")
+possible_output = np.array(["Eligible", "Ineligible"])
+st.success(possible_output[pred][0])
