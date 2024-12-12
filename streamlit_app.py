@@ -67,7 +67,9 @@ input_df["loan_intent"] = input_df["loan_intent"].replace({"Education" :0, "Medi
 row_array = input_df.iloc[0].to_numpy().reshape(1, -1)
 
 pred = knn.predict(row_array)
+
 prob = knn.predict_proba(row_array)
+prob.columns = ["not approved", "aproved"]
 
 k = "lalal"
 
