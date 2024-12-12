@@ -93,7 +93,7 @@ st.dataframe(prob_df, column_config = {
                                     }, hide_index = True)
 
 
-st.write(prob_df)
+# st.write(prob_df)
 import numpy as np
 possible_output = np.array(["Eligible", "Ineligible"])
 
