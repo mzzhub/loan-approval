@@ -70,6 +70,7 @@ pred = knn.predict(row_array)
 
 prob = knn.predict_proba(row_array)
 prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
+prob_df = prob_df * 100
 
 st.subheader("Prediction")
 
