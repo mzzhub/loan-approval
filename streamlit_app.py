@@ -73,9 +73,9 @@ prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
 
 k = "lalal"
 
-if pred == "1":
+if pred == 1:
     k = "ok"
-elif pred == "0":
+elif pred == 0:
     k = "no"
 
 st.write(k)
