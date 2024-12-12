@@ -80,4 +80,4 @@ else:
     k = "no"
 
 st.write(k)
-st.write(prob)
+st.write(prob_df)
