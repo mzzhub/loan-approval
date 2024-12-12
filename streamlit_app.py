@@ -76,7 +76,7 @@ st.subheader("Prediction")
 st.dataframe(prob_df, column_config = {
                                         "Eligible" : st.column_config.ProgressColumn(
                                                                                         "Eligible",
-                                                                                        format = "%f",
+                                                                                        format = "%.1f%%",
                                                                                         width = "medium",
                                                                                         min_value = 0,
                                                                                         max_value = 1
@@ -84,7 +84,7 @@ st.dataframe(prob_df, column_config = {
                                                                                     ),
                                         "Ineligible" : st.column_config.ProgressColumn(
                                                                                         "Ineligible",
-                                                                                        format = "%f",
+                                                                                        format = "%.1f%%",
                                                                                         width = "medium",
                                                                                         min_value = 0,
                                                                                         max_value = 1
