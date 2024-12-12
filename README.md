@@ -2,7 +2,7 @@
 ```
 ⬆️ 💵 Loan Eligibility Check 🏦
 ```
-Initial Model with KNN
+its time for RandomForest()
 
 ## Demo App
 
