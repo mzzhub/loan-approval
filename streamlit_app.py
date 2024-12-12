@@ -105,4 +105,7 @@ st.dataframe(prob_df, column_config = {
 
 
 
+chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+
+st.area_chart(chart_data)
 
