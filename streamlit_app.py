@@ -75,7 +75,7 @@ k = "lalal"
 
 if pred == "1":
     k = "ok"
-elif pred == "0"
+elif pred == "0":
     k = "no"
 
 st.write(k)
