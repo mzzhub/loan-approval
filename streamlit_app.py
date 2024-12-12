@@ -104,15 +104,5 @@ st.dataframe(prob_df, column_config = {
                                     }, hide_index = True)
 
 
-# st.write(prob_df)
-import numpy as np
-possible_output = np.array(["Eligible", "Ineligible"])
-
-# st.success(possible_output[pred][0])
-
-if pred[0] == 0:  # Assuming 0 corresponds to "Eligible"
-    st.success(possible_output[pred][0])  # Green background
-else:  # Assuming 1 corresponds to "Ineligible"
-    st.error(possible_output[pred][0])  # Red background
 
 
