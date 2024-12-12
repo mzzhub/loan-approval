@@ -33,7 +33,7 @@ knn = KNeighborsClassifier(metric = 'manhattan', n_neighbors = 11, weights = 'di
 knn.fit(x, y)
 
 # user inputs
-age = int(st.slider("Age", 20, 114, 30))
+age = int(st.slider("**Age**", 20, 114, 30))
 gender = str(st.radio("Gender", ("Male", "Female")))
 education = str(st.selectbox("Education", ("Bachelor", "Associate", "High School", "Master", "Doctorate")))
 income = int(st.number_input("Annual Income", 8000, 7200000, 50000, 500))
