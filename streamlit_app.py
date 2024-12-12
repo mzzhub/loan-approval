@@ -81,6 +81,8 @@ else:
 st.write(k)
 st.write(prob_df)
 
+import numpy as np
+
 st.subheader("Prediction")
 possible_output = np.array(["Eligible", "Ineligible"])
 st.success(possible_output[pred][0])
