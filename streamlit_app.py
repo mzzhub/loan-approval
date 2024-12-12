@@ -109,3 +109,28 @@ chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
 st.area_chart(chart_data)
 
+
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import GridSearchCV
+
+# Define the Random Forest model
+rf_gscv = RandomForestClassifier(random_state=42)
+
+# Define the parameter grid
+param_grid = {
+    'n_estimators': [50, 100, 200],       # Number of trees in the forest
+    'max_depth': [None, 10, 20, 30],      # Maximum depth of the trees
+    'min_samples_split': [2, 5, 10],      # Minimum samples required to split an internal node
+    'min_samples_leaf': [1, 2, 4],        # Minimum samples required to be at a leaf node
+    'bootstrap': [True, False]            # Whether bootstrap samples are used
+}
+
+# Define the GridSearchCV
+gscv = GridSearchCV(estimator=rf_gscv, param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=2)
+
+# Fit the grid search to the data
+gscv.fit(x, y)
+
+# Print the best parameters and best score
+st.write("Best Parameters:", gscv.best_params_)
+st.write("Best Accuracy:", gscv.best_score_)
