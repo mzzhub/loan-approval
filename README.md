@@ -1,9 +1,8 @@
 # 📦 Streamlit App Starter Kit 
 ```
-⬆️ (Replace above with your app's name)
+⬆️ 💵 Loan Eligibility Check 🏦
 ```
-
-Description of the app ...
+Initial Model with KNN
 
 ## Demo App
 
