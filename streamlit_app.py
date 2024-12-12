@@ -70,7 +70,7 @@ pred = knn.predict(row_array)
 
 prob = knn.predict_proba(row_array)
 prob_df = pd.DataFrame(prob, columns = ["not approved", "aproved"])
-prob.columns = ["not approved", "aproved"]
+# prob.columns = ["not approved", "aproved"]
 
 k = "lalal"
 
