@@ -72,6 +72,26 @@ prob = knn.predict_proba(row_array)
 prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
 
 st.subheader("Prediction")
+
+st.dataftame(prob_df, column_config = {
+                                        "Eligible" : st.column_config.ProgressColumn(
+                                                                                        "Eligible",
+                                                                                        format = "%f",
+                                                                                        width = "medium",
+                                                                                        min_value = 0,
+                                                                                        max_value = 1
+                                                                                    
+                                                                                    ),
+                                        "Ineligible" : st.column_config.ProgressColumn(
+                                                                                        "Ineligible",
+                                                                                        format = "%f",
+                                                                                        width = "medium",
+                                                                                        min_value = 0,
+                                                                                        max_value = 1
+                                                                                    )
+                                    }, hide_index = True)
+
+
 st.write(prob_df)
 import numpy as np
 possible_output = np.array(["Eligible", "Ineligible"])
