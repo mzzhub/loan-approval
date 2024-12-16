@@ -24,13 +24,13 @@ df["loan_intent"] = df["loan_intent"].replace({"Education" :0, "Medical" : 1, "V
 x = df.drop("loan_status", axis = 1)
 y = df["loan_status"]
 
-# from sklearn.preprocessing import StandardScaler
-# ss01 = StandardScaler()
-# x = ss01.fit_transform(x)
+from sklearn.preprocessing import StandardScaler
+ss01 = StandardScaler()
+x = ss01.fit_transform(x)
 
-from sklearn.neighbors import KNeighborsClassifier
-knn = KNeighborsClassifier(metric = 'manhattan', n_neighbors = 11, weights = 'distance')
-knn.fit(x, y)
+from sklearn.ensemble import RandomForestClassifier
+rfc = RandomForestClassifier(n_estimators = 200, max_depth = 20, min_samples_split = 5, min_samples_leaf = 2, bootstrap = True, random_state = 42)
+rfc.fit(x_train, y_train)
 
 # user inputs
 age = int(st.slider("**Age**", 20, 114, 30))
@@ -66,9 +66,9 @@ input_df["loan_intent"] = input_df["loan_intent"].replace({"Education" :0, "Medi
 
 row_array = input_df.iloc[0].to_numpy().reshape(1, -1)
 
-pred = knn.predict(row_array)
+pred = rfc.predict(row_array)
 
-prob = knn.predict_proba(row_array)
+prob = rfc.predict_proba(row_array)
 prob_df = pd.DataFrame(prob, columns = ["Eligible", "Ineligible"])
 prob_df = prob_df * 100
 
@@ -108,29 +108,3 @@ st.dataframe(prob_df, column_config = {
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 
 st.area_chart(chart_data)
-
-
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import GridSearchCV
-
-# Define the Random Forest model
-rf_gscv = RandomForestClassifier(random_state=42)
-
-# Define the parameter grid
-param_grid = {
-    'n_estimators': [50, 100, 200],       # Number of trees in the forest
-    'max_depth': [None, 10, 20, 30],      # Maximum depth of the trees
-    'min_samples_split': [2, 5, 10],      # Minimum samples required to split an internal node
-    'min_samples_leaf': [1, 2, 4],        # Minimum samples required to be at a leaf node
-    'bootstrap': [True, False]            # Whether bootstrap samples are used
-}
-
-# Define the GridSearchCV
-gscv = GridSearchCV(estimator=rf_gscv, param_grid=param_grid, cv=5, scoring='accuracy', n_jobs=-1, verbose=2)
-
-# Fit the grid search to the data
-gscv.fit(x, y)
-
-# Print the best parameters and best score
-st.write("Best Parameters:", gscv.best_params_)
-st.write("Best Accuracy:", gscv.best_score_)
