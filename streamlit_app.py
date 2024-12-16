@@ -24,6 +24,12 @@ df["loan_intent"] = df["loan_intent"].replace({"Education" :0, "Medical" : 1, "V
 x = df.drop("loan_status", axis = 1)
 y = df["loan_status"]
 
+! pip install imbalanced-learn
+
+from imblearn.over_sampling import SMOTE
+smote = SMOTE(random_state = 42)
+x, y = smote.fit_resample(x, y)
+
 from sklearn.preprocessing import StandardScaler
 ss01 = StandardScaler()
 x = ss01.fit_transform(x)
