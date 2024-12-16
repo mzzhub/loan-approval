@@ -30,7 +30,7 @@ x = ss01.fit_transform(x)
 
 from sklearn.ensemble import RandomForestClassifier
 rfc = RandomForestClassifier(n_estimators = 200, max_depth = 20, min_samples_split = 5, min_samples_leaf = 2, bootstrap = True, random_state = 42)
-rfc.fit(x_train, y_train)
+rfc.fit(x, y)
 
 # user inputs
 age = int(st.slider("**Age**", 20, 114, 30))
