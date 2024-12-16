@@ -24,9 +24,9 @@ df["loan_intent"] = df["loan_intent"].replace({"Education" :0, "Medical" : 1, "V
 x = df.drop("loan_status", axis = 1)
 y = df["loan_status"]
 
-# from sklearn.preprocessing import StandardScaler
-# ss01 = StandardScaler()
-# x = ss01.fit_transform(x)
+from sklearn.preprocessing import StandardScaler
+ss01 = StandardScaler()
+x = ss01.fit_transform(x)
 
 from sklearn.ensemble import RandomForestClassifier
 rfc = RandomForestClassifier(n_estimators = 200, max_depth = 20, min_samples_split = 5, min_samples_leaf = 2, bootstrap = True, random_state = 42)
