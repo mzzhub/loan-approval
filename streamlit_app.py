@@ -66,7 +66,7 @@ input_df["loan_intent"] = input_df["loan_intent"].replace({"Education" :0, "Medi
 
 row_array = input_df.iloc[0].to_numpy().reshape(1, -1)
 
-xow_array = ss01.fit_transform(row_array)
+row_array = ss01.fit_transform(row_array)
 
 pred = rfc.predict(row_array)
 
